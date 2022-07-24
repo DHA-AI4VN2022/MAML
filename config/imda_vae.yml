@@ -1,0 +1,43 @@
+base_dir: ./log/imda_vae/
+num_layers: 2
+hidden_dim: 400
+latent_dim: 200
+hidden_dim_2: 64
+input_len: 24
+output_len: 1
+input_dim: 8
+output_dim: 1 
+lr: 0.001
+dropout: 0.2
+lr_decay_ratio: 0.5
+optimizer: adam
+patience: 30
+epochs: 150
+delta: 0
+batch_size: 16
+input_features:
+  - PM2.5
+  - AQI
+  - PM10
+  - CO
+  - NO2
+  - O3
+  - SO2
+  - wind
+target_features:
+  - PM2.5
+data_dir: data/Beijing/
+target_station: 
+  - 房山
+  - 天坛
+  - 云岗
+  - 东四环
+  - 官园
+  - 东四
+  - 北部新区
+  - 丰台花园
+  - 古城
+  - 南三环
+train_size: 0.6
+valid_size: 0.25
+test_size: 0.15

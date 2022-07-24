@@ -1,0 +1,64 @@
+base_dir: './log/daqff'
+data_dir: 'data/Beijing/'
+target_station: 
+  - 房山
+  - 天坛
+  - 云岗
+  - 东四环
+  - 官园
+  - 东四
+  - 北部新区
+  - 丰台花园
+  - 古城
+  - 南三环
+input_features:
+  - PM2.5
+  - AQI
+  - PM10
+  - CO
+  - NO2
+  - O3
+  - SO2
+  - wind
+target_features:
+  - PM2.5
+
+n_in : 9
+n_out : 7
+n_timestep : 10
+lr : 0.005
+lr_decay_ratio: 0.5
+dropout: 0.2
+batch_size: 32
+lookup_size: 1
+
+epochs: 150
+patience: 20
+in_channels1: 8
+out_channels1: 32
+kernel_size1: 5
+
+in_channels2: 32
+out_channels2: 16
+kernel_size2: 3
+
+in_channels3: 16
+out_channels3: 8
+kernel_size3: 1
+
+# in_features_fc:
+out_features_fc: 16
+kernel_size_maxpool: 3
+stride_maxpool: 1 
+padding_maxpool: 1
+
+# bilstm
+hidden_size: 32
+num_layers: 1
+
+# fusion:
+# in_features_fs:
+out_features_fs: 64
+train_size: 0.6
+valid_size: 0.25
+test_size: 0.15

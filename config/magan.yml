@@ -1,0 +1,36 @@
+model:
+  hidden_size: 64 #p
+  window_size: 10 #T
+  driving_series: 5 #n
+  num_filter: 1 #k
+  kernel_size: 1 #w
+  batch_size: 128
+  output_size: 1 #out_seq 
+train:
+  lr: 0.0005 
+  optimizer: adam
+  epochs: 100
+data:
+  batch_size: 128
+  input_features:
+    - PM2.5
+    - AQI
+    - PM10
+    - CO
+    - NO2
+  target_features:
+    - PM2.5
+  data_dir: data/Beijing/
+  target_station: 
+    - 房山
+    - 天坛
+    - 云岗
+    - 东四环
+    - 官园
+    - 东四
+    - 北部新区
+    - 丰台花园
+    - 古城
+    - 南三环
+  train_size: 0.5
+  valid_size: 0.25

@@ -1,0 +1,27 @@
+program: main_with_args.py
+method: bayes
+metric:
+  name: val_loss
+  goal: minimize
+parameters:
+  model:
+    value: spatio_attention_embedded_rnn 
+  batch_size:
+    values: [16,32, 64]
+  hidden_dim:
+    values: [32, 64, 128]
+  hidden_dim_2:
+    values: [8, 16, 32]
+  lr:
+    values: [0.001, 0.005, 0.0001, 0.00005, 0.00001]
+  dropout:
+    min: 0.1
+    max: 0.9
+  lr_decay_ratio:
+    values: [0.1, 0.5, 0.9]
+  input_len:
+    min: 6
+    max: 48
+  num_input_station:
+    min: 6
+    max: 30

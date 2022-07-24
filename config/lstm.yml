@@ -1,0 +1,35 @@
+base_dir: ./log/lstm/
+num_layers: 1
+hidden_dim: 128
+input_len: 24
+output_len: 1
+input_dim: 1
+output_dim: 1
+activation: relu 
+lr: 0.0005
+dropout: 0.4
+lr_decay_ratio: 0.1
+optimizer: adam
+patience: 10
+epochs: 150
+delta: 0
+batch_size: 32
+input_features:
+  - PM2.5
+target_features:
+  - PM2.5
+data_dir: data/Beijing/
+target_station: 
+  - 房山
+  - 天坛
+  - 云岗
+  - 东四环
+  - 官园
+  - 东四
+  - 北部新区
+  - 丰台花园
+  - 古城
+  - 南三环
+train_size: 0.6
+valid_size: 0.25
+test_size: 0.15

@@ -1,0 +1,23 @@
+program: main_with_args.py
+method: bayes
+metric:
+  name: val_loss
+  goal: minimize
+parameters:
+  model:
+    value: mlae
+  batch_size:
+    values: [32, 64]
+  model_lr:
+    values: [0.01, 0.05, 0.001, 0.005, 0.0001, 0.0005, 0.00005, 0.00001]
+  task_lr:
+    values: [0.01, 0.05, 0.001, 0.005, 0.0001, 0.0005, 0.00005, 0.00001]
+  lr_decay:
+    values: [0.005, 0.1, 0.5, 0.9]
+  weight_decay:
+    values: [0.01, 0.05, 0.001, 0.005, 0.0001, 0.0005, 0.00005, 0.00001]
+  input_len:
+    min: 6
+    max: 48
+#  train_ratio:
+#    values: 1

@@ -1,0 +1,49 @@
+base_dir: ./log/spattrnn/
+data_dir: ./data/Beijing/
+batch_size: 64
+num_input_station: 20
+target_station: 
+  - 房山
+  - 天坛
+  - 云岗
+  - 东四环
+  - 官园
+  - 东四
+  - 北部新区
+  - 丰台花园
+  - 古城
+  - 南三环
+input_features:
+  - PM2.5
+  - AQI
+  - PM10
+  - CO
+  - NO2
+  - O3
+  - SO2
+  - wind
+target_features:
+  - PM2.5
+train_size: 0.6
+valid_size: 0.25
+test_size: 0.15
+rnn_type: lstm
+input_len: 48
+output_len: 1
+input_dim: 8
+output_dim: 1
+hidden_dim: 128
+hidden_dim_2: 32
+gcn_dim_1: 256
+activation: relu
+bias: True
+num_layers: 1
+
+lr: 0.001
+dropout: 0.4
+lr_decay_ratio: 0.1
+optimizer: adam
+patience: 10
+epochs: 150
+delta: 0
+alpha: 0.1

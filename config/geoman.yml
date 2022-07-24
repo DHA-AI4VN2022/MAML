@@ -1,0 +1,68 @@
+base_dir: ./log/geoman/
+checkpoint: ./checkpoint/geoman/
+visualize:  ./log/geoman/visualize/
+result: ./log/geoman/result/
+data_dir: ./data/Beijing/
+batch_size: 32
+num_input_station: 33
+num_neighbours: 10
+nan_station: 
+target_station: 
+  - 房山
+  - 天坛
+  - 云岗
+  - 东四环
+  - 官园
+  - 东四
+  - 北部新区
+  - 丰台花园
+  - 古城
+  - 南三环
+input_features:
+  - PM2.5
+  - AQI
+  - PM10
+  - CO
+  - NO2
+  - O3
+  - SO2
+target_features:
+  - PM2.5
+ext_flag: True
+external_features:
+  - AQI
+  - PM10
+  - CO
+  - O3
+  - NO2
+  - SO2
+ext_mask:
+  - 1
+  - 0
+  - 0
+train_size: 0.6
+val_size: 0.25
+test_size: 0.15
+
+input_dim: 7
+hid_dim: 32
+out_dim: 1
+ext_dim: 7
+lamda: 0.5
+num_layers: 1
+batch_size: 32
+
+lr: 0.005
+patience: 20
+epochs: 150
+delta: 0
+lr_decay_ratio: 0.5
+
+enc_len: 24 # = n_input_decoder
+dec_len: 6 # = n_steps_decoder
+n_input_decoder: 1
+n_hidden_encoder: 64
+n_hidden_decoder: 64
+n_output_decoder: 1
+s_attn_flag: 2
+output_size: 64

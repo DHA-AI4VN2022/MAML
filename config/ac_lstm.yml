@@ -1,0 +1,47 @@
+dataset_dir: ./data/Beijing/gauges/
+base_dir: ./log/ac_lstm/
+data_dir: ./data/Beijing/
+target_station: 
+  - 房山
+  - 天坛
+  - 云岗
+  - 东四环
+  - 官园
+  - 东四
+  - 北部新区
+  - 丰台花园
+  - 古城
+  - 南三环
+train_size: 0.6
+valid_size: 0.25
+test_size: 0.15 
+
+input_features:
+  - PM2.5
+  - AQI
+  - PM10
+  - CO
+  - NO2
+  - O3
+  - SO2
+target_features:
+  - PM2.5
+
+batch_size: 24
+input_size: 25
+output_size: 1
+input_seq_len: 48
+horizon: 3 # outputsize
+kernel_size: 3
+hidden_size: 128
+hidden_size_2: 128
+num_layers: 2
+dropout: 0.2
+
+lr: 0.005
+dropout: 0.4
+lr_decay_ratio: 0.7
+epochs: 150
+patience: 20
+optimizer: adam
+criterion: mse

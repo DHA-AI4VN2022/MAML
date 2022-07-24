@@ -1,0 +1,69 @@
+ae_epochs: 2
+model_epochs: 2
+ae_lr: 5e-3
+model_lr: 5e-3
+task_lr: 5e-4
+update_step: 5   #individual task update
+lr_decay: 0.1
+weight_decay: 5e-5
+patience: 15
+#  num_layers: 1
+#  batch_size: 128
+#  hidden_size: 64
+
+mlae_model:
+  lstm:
+    hidden_size:
+      - 64
+      - 32
+  ae:
+    encoder:
+      - 128
+      - 64
+      - 32
+    decoder:
+      - 32
+      - 64
+      - 128
+  mix:
+    - 128
+    - 64
+  multitask_size: 16
+
+
+
+target_station:
+  - 房山
+  - 天坛
+  - 云岗
+  - 东四环
+  - 官园
+  - 东四
+  - 北部新区
+  - 丰台花园
+  - 古城
+  - 南三环
+data_dir: ./data/Beijing/
+base_dir: ./log/mlae/
+batch_size: 64
+input_len: 48
+output_len: 1
+num_stations: 10
+meteo_features:
+  - CO
+  - NO2
+  - O3
+  - SO2
+  - prec
+  - lrad
+  - shum
+  - pres
+  - temp
+  - wind
+  - srad
+target_features:
+  - PM2.5
+train_size: 0.5
+valid_size: 0.25
+test_size: 0.25
+
